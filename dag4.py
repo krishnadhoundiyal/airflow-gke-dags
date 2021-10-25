@@ -57,7 +57,7 @@ op_29b1d1bae54d48b5b0b3e66cded365ac = KubernetesPodOperator(
     name="29b1d1bae54d48b5b0b3e66cded365ac",
     namespace='default',
     cmds=["sh", "-c"],
-    arguments=["mkdir -p ./jupyter-work-dir/ && cd ./jupyter-work-dir/ && curl -H 'Cache-Control: no-cache' -L https://raw.githubusercontent.com/krishnadhoundiyal/explorer/main/runnotebook.py --output runnotebook.py && curl -H 'Cache-Control: no-cache' -L https://raw.githubusercontent.com/krishnadhoundiyal/explorer/main/requirements-explorer.txt --output requirements.txt && python3 -m pip install packaging && python3 -m pip install -r requirements.txt && python3 -m pip freeze > requirements-current.txt && python3 runnotebook.py --endpoint storage.googleapis.com --bucket explorer-cloud-storage --directory 'Dag_generated_Explorer2b2e8e29-b074-4907-b4c2-15a15bac17cb4343' --dependencies-archive 'load_data-3b7cf0d315bf45ea820ed29ee4687ca7.tar.gz' --file 'load_data.ipynb' --outputs 'data/noaa-weather-data-jfk-airport/jfk_weather.csv'"
+    arguments=["mkdir -p ./jupyter-work-dir/ && cd ./jupyter-work-dir/ && curl -H 'Cache-Control: no-cache' -L https://raw.githubusercontent.com/krishnadhoundiyal/explorer/main/runnotebook.py --output runnotebook.py && curl -H 'Cache-Control: no-cache' -L https://raw.githubusercontent.com/krishnadhoundiyal/explorer/main/requirements-explorer.txt --output requirements.txt && python3 -m pip install packaging && python3 -m pip install -r requirements.txt && python3 -m pip freeze > requirements-current.txt && python3 runnotebook.py --endpoint storage.googleapis.com --bucket explorer-cloud-storage --directory 'Dag_generated_Explorer2b2e8e29-b074-4907-b4c2-15a15bac17cb4343' --dependencies-archive 'Part 1 - Data Cleaning-29b1d1bae54d48b5b0b3e66cded365ac.tar.gz' --file 'Part 1 - Data Cleaning.ipynb' --inputs 'data/noaa-weather-data-jfk-airport/jfk_weather.csv' --outputs 'data/noaa-weather-data-jfk-airport/jfk_weather_cleaned.csv'"
     ],
     env_vars={
         "d": "g",
@@ -117,4 +117,3 @@ op_3b7cf0d315bf45ea820ed29ee4687ca7 >> op_29b1d1bae54d48b5b0b3e66cded365ac
 op_29b1d1bae54d48b5b0b3e66cded365ac >> op_4b4f06f328ff4a788473eb9281948b81
 
 op_29b1d1bae54d48b5b0b3e66cded365ac >> op_3be3433fa22242d1a3fbeeeb7158b571
-
